@@ -54,6 +54,7 @@ public:
     uint8_t getGain();
     bool isValidGain(uint8_t newGain);
     bool shutdown();
+    uint8_t getChannel();
 };
 
 #endif

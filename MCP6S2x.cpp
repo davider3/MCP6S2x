@@ -63,13 +63,13 @@ bool MCP6S2x::setGain(uint8_t newGain){
  *  @return True if the channel is valid and changed successfully, false otherwise.
  */
 bool MCP6S2x::changeChannel(uint8_t ch){
-    // IF THE CHANNEL IS ALREADY SET THEN DON'T CHANGE IT
-    if(ch == channel)
-        return true;
+    // FIXME: IF THE CHANNEL IS ALREADY SET THEN DON'T CHANGE IT
+    // if(ch == channel)
+    //     return true;
 
-    // VERIFIES THAT IT IS A VALID CHANNEL
-    if(ch < CH0 || ch >= channels)
-        return false;
+    // FIXME: VERIFIES THAT IT IS A VALID CHANNEL
+    // if(ch < CH0 || ch >= channels)
+    //     return false;
 
     // CHANGES THE CHANNELS USING SPI COMMS
     channel = ch;
@@ -159,4 +159,10 @@ bool MCP6S2x::shutdown(){
     SPI.endTransaction();
 
     return true;
+}
+
+
+
+uint8_t MCP6S2x::getChannel(){
+    return channel;
 }
